@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Chilanka&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+.loading{
+    height: 400px;
+    width: 400px;
+    background: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-family: 'Chilanka', cursive;
+    font-size: 50px;
+}
+.loading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -3px;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background: white;
+    z-index: -1;
+    animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+    0%{
+        transform-origin: 203px 200px;
+        transform: rotate(0deg);
+    }
+    100%{
+        transform-origin: 203px 200px;
+        transform: rotate(360deg);
+    }
+}
+.loading span {
+    animation: hide 2s linear infinite;
+    animation-delay: calc(0.5s * var(--i));
+}
+@keyframes hide {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
